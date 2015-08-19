@@ -1,0 +1,13 @@
+<% @restaurants.each_with_index do |restaurant, index|%>
+    <div>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      <%= @stars[index] %>
+      <% restaurant.reviews.each do |review| %>
+        <div>
+          <%= review.content %>
+          <%= review.rating %>
+        </div>
+      <%end%>
+      <p><%= link_to "Open your fuckin' mouth", new_restaurant_review_path(restaurant) %></p>
+    </div>
+<%end%>

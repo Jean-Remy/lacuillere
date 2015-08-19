@@ -1,0 +1,17 @@
+<h1 class="text-center">Add a New Restaurant</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name, placeholder: "Les Chandelles" %>
+        <%= f.input :address, placeholder: "1 Rue Thérèse, 75001 Paris, France"%>
+        <%= f.input :category, label: "Type of Food", collection: Restaurant::CATEGORIES %>
+        <%= f.input :phone_number, placeholder: "Just put your phone bitch!" %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
